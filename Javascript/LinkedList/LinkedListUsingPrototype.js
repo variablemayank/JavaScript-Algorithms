@@ -109,7 +109,6 @@ LinkedList.prototype.printList = function()
     }
 
     str += "}";
-
     console.log("Linked lIst is ",str);
     
 }
