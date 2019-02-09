@@ -4,13 +4,13 @@ function Stack ()
 }
 
 
-Stack.prototype.push = function ()
+Stack.prototype.push = function (value)
 {
-    var newNode = {
-        data: ValidityState,
+    var Node = {
+        data: value,
         next: this.head
     }
-    this.head = new Node;
+    this.head = Node;
 }
 
 Stack.prototype.pop = function ()
@@ -26,13 +26,19 @@ Stack.prototype.list = function ()
 
     while(current!==null)
     {
-        str += current.next;
+        str += current.data;
         if(current.next!=null)
         str += ",";
 
         current = current.next;
     }
-    console.log("List of the stack",str);
+    // console.log("List of the stack",str);
+    return str;
+}
+
+Stack.prototype.top = function ()
+{
+    if(this.head!==null) return this.head.data;
 }
 
 var object = new Stack();
@@ -43,4 +49,8 @@ object.push(12);
 object.push(13);
 object.push(14);
 
+console.log(object.list());
+console.log(object.top());
+
+object.pop();
 console.log(object.list());
